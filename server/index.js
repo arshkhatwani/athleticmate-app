@@ -174,6 +174,24 @@ app.get("/gendered-users", async (req, res) => {
   }
 });
 
+// Get all the Users by sports in the Database
+app.get("/sports-users", async (req, res) => {
+  const client = new MongoClient(uri);
+  const sport = req.query.sport;
+  console.log(sport)
+  try {
+    await client.connect();
+    const database = client.db("app-data");
+    const users = database.collection("users");
+    const query = { about: { $eq: sport } };
+    const foundUsers = await users.find(query).toArray();
+    console.log(foundUsers)
+    res.json(foundUsers);
+  } finally {
+    await client.close();
+  }
+});
+
 // Update a User in the Database
 app.put("/user", async (req, res) => {
   const client = new MongoClient(uri);

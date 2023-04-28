@@ -8,6 +8,7 @@ const Dashboard = () => {
     const [user, setUser] = useState(null)
     const [genderedUsers, setGenderedUsers] = useState(null)
     const [lastDirection, setLastDirection] = useState()
+    // eslint-disable-next-line
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
     const userId = cookies.UserId
@@ -23,10 +24,10 @@ const Dashboard = () => {
             console.log(error)
         }
     }
-    const getGenderedUsers = async () => {
+    const getSportsUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/gendered-users', {
-                params: {gender: user?.gender_interest}
+            const response = await axios.get('http://localhost:8000/sports-users', {
+                params: {sport: user?.about}
             })
             setGenderedUsers(response.data)
         } catch (error) {
@@ -36,13 +37,14 @@ const Dashboard = () => {
 
     useEffect(() => {
         getUser()
-
+        // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
         if (user) {
-            getGenderedUsers()
+            getSportsUsers()
         }
+        // eslint-disable-next-line
     }, [user])
 
     const updateMatches = async (matchedUserId) => {
