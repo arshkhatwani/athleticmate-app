@@ -156,6 +156,14 @@ nav .logo-container .logo {
     border-radius: 10px;
 }
 
+.onboarding form select {
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-size: 15px;
+    border: solid 2px rgb(219, 219, 219);
+    border-radius: 10px;
+}
+
 .onboarding form label {
     margin: 10px 0;
 }
