@@ -16,7 +16,6 @@ const OnBoarding = () => {
         dob_year: "",
         show_gender: false,
         gender_identity: "man",
-        gender_interest: "woman",
         url: "",
         about: sports[0],
         matches: [],
@@ -146,42 +145,6 @@ const OnBoarding = () => {
                             onChange={handleChange}
                             checked={formData.show_gender}
                         />
-
-                        <label>Show Me</label>
-
-                        <div className="multiple-input-container">
-                            <input
-                                id="man-gender-interest"
-                                type="radio"
-                                name="gender_interest"
-                                value="man"
-                                onChange={handleChange}
-                                checked={formData.gender_interest === "man"}
-                            />
-                            <label htmlFor="man-gender-interest">Man</label>
-                            <input
-                                id="woman-gender-interest"
-                                type="radio"
-                                name="gender_interest"
-                                value="woman"
-                                onChange={handleChange}
-                                checked={formData.gender_interest === "woman"}
-                            />
-                            <label htmlFor="woman-gender-interest">Woman</label>
-                            <input
-                                id="everyone-gender-interest"
-                                type="radio"
-                                name="gender_interest"
-                                value="everyone"
-                                onChange={handleChange}
-                                checked={
-                                    formData.gender_interest === "everyone"
-                                }
-                            />
-                            <label htmlFor="everyone-gender-interest">
-                                Everyone
-                            </label>
-                        </div>
 
                         <label htmlFor="about">I like to play</label>
                         <select
