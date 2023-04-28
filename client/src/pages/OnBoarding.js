@@ -6,6 +6,7 @@ import axios from "axios";
 import sports from "../constants/sports";
 
 const OnBoarding = () => {
+    // eslint-disable-next-line
     const [cookies, setCookie, removeCookie] = useCookies(null);
     const [formData, setFormData] = useState({
         user_id: cookies.UserId,

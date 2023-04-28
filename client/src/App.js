@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {useCookies} from 'react-cookie'
 
 const App = () => {
+    // eslint-disable-next-line
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
     const authToken = cookies.AuthToken
