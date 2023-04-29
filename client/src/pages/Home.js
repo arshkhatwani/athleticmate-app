@@ -20,6 +20,11 @@ const Home = () => {
         setIsSignUp(true)
     }
 
+    const handleClickLogin = () => {
+        setShowModal(true);
+        setIsSignUp(false);
+      };
+
     return (
         <div className="overlay">
             <Nav
@@ -30,10 +35,18 @@ const Home = () => {
                 setIsSignUp={setIsSignUp}
             />
             <div className="home">
-                <h1 className="primary-title">Swipe Right®</h1>
-                <button className="primary-button" onClick={handleClick}>
+                <h1 className="primary-title">Stay Fit.</h1>
+
+                <div className='flex flex-col jutify-center items-center'>
+
+                <button className="primary-button mb-3" onClick={handleClick}>
                     {authToken ? 'Signout' : 'Create Account'}
                 </button>
+                
+                {!authToken && <button className="primary-button" onClick={handleClickLogin}>
+                    Login
+                </button>}
+                </div>
 
 
                 {showModal && (

@@ -16,15 +16,6 @@ const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
           alt="logo"
         />
       </div>
-      {!authToken && !minimal && (
-        <button
-          className="nav-button"
-          onClick={handleClick}
-          disabled={showModal}
-        >
-          Log in
-        </button>
-      )}
     </nav>
   );
 };
