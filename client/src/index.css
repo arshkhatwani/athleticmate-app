@@ -147,13 +147,11 @@ nav .logo-container .logo {
 .onboarding form section {
     display: flex;
     flex-direction: column;
-    padding: 20px;
     width: 35%;
     text-align: start;
 }
 
 .onboarding form input {
-    padding: 15px 30px;
     margin: 10px 0;
     font-size: 15px;
     border: solid 2px rgb(219, 219, 219);
@@ -175,6 +173,7 @@ nav .logo-container .logo {
 .onboarding form .multiple-input-container {
     display: flex;
     flex-direction: row;
+    color: black;
 }
 
 .onboarding form input::-webkit-outer-spin-button,
@@ -216,7 +215,7 @@ nav .logo-container .logo {
 }
 
 .onboarding form .photo-container img {
-    width: 100%;
+    max-width: 40%;
 }
 
 /*-------- Dashboard  --------*/

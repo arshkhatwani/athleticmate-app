@@ -54,12 +54,13 @@ const OnBoarding = () => {
             <Nav minimal={true} setShowModal={() => {}} showModal={false} />
 
             <div className="onboarding">
-                <h2>CREATE ACCOUNT</h2>
+                <h2 className="my-6 text-2xl">CREATE ACCOUNT</h2>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="gap-5">
                     <section>
                         <label htmlFor="first_name">First Name</label>
                         <input
+                            className="p-2"
                             id="first_name"
                             type="text"
                             name="first_name"
@@ -72,6 +73,7 @@ const OnBoarding = () => {
                         <label>Birthday</label>
                         <div className="multiple-input-container">
                             <input
+                                className="p-2"
                                 id="dob_day"
                                 type="number"
                                 name="dob_day"
@@ -82,6 +84,7 @@ const OnBoarding = () => {
                             />
 
                             <input
+                                className="p-2"
                                 id="dob_month"
                                 type="number"
                                 name="dob_month"
@@ -92,6 +95,7 @@ const OnBoarding = () => {
                             />
 
                             <input
+                                className="p-2"
                                 id="dob_year"
                                 type="number"
                                 name="dob_year"
@@ -105,6 +109,7 @@ const OnBoarding = () => {
                         <label>Gender</label>
                         <div className="multiple-input-container">
                             <input
+                                className="p-2"
                                 id="man-gender-identity"
                                 type="radio"
                                 name="gender_identity"
@@ -114,6 +119,7 @@ const OnBoarding = () => {
                             />
                             <label htmlFor="man-gender-identity">Man</label>
                             <input
+                                className="p-2"
                                 id="woman-gender-identity"
                                 type="radio"
                                 name="gender_identity"
@@ -123,6 +129,7 @@ const OnBoarding = () => {
                             />
                             <label htmlFor="woman-gender-identity">Woman</label>
                             <input
+                                className="p-2"
                                 id="more-gender-identity"
                                 type="radio"
                                 name="gender_identity"
@@ -149,12 +156,13 @@ const OnBoarding = () => {
                             ))}
                         </select>
 
-                        <input type="submit" />
+                        <input className="p-2" type="submit" />
                     </section>
 
                     <section>
                         <label htmlFor="url">Profile Photo</label>
                         <input
+                            className="p-2"
                             type="url"
                             name="url"
                             id="url"
