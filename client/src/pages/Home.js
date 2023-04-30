@@ -1,29 +1,30 @@
-import Nav from '../components/Nav'
-import AuthModal from "../components/AuthModal"
-import {useState} from 'react'
-import {useCookies} from "react-cookie"
+import Nav from "../components/Nav";
+import AuthModal from "../components/AuthModal";
+import { useState } from "react";
+import { useCookies } from "react-cookie";
+import Button from "../components/Button";
 
 const Home = () => {
-    const [showModal, setShowModal] = useState(false)
-    const [isSignUp, setIsSignUp] = useState(true)
-    const [cookies, setCookie, removeCookie] = useCookies(['user'])
-    const authToken = cookies.AuthToken
+    const [showModal, setShowModal] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(true);
+    const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+    const authToken = cookies.AuthToken;
 
     const handleClick = () => {
         if (authToken) {
-            removeCookie('UserId', cookies.UserId)
-            removeCookie('AuthToken', cookies.AuthToken)
-            window.location.reload()
-            return
+            removeCookie("UserId", cookies.UserId);
+            removeCookie("AuthToken", cookies.AuthToken);
+            window.location.reload();
+            return;
         }
-        setShowModal(true)
-        setIsSignUp(true)
-    }
+        setShowModal(true);
+        setIsSignUp(true);
+    };
 
     const handleClickLogin = () => {
         setShowModal(true);
         setIsSignUp(false);
-      };
+    };
 
     return (
         <div className="overlay">
@@ -37,23 +38,29 @@ const Home = () => {
             <div className="home">
                 <h1 className="primary-title">Stay Fit.</h1>
 
-                <div className='flex flex-col jutify-center items-center'>
+                <div className="flex flex-col jutify-center items-center">
+                    <Button onClick={handleClick} className="mb-3 text-base">
+                        {authToken ? "Signout" : "Create Account"}
+                    </Button>
 
-                <button className="primary-button mb-3" onClick={handleClick}>
-                    {authToken ? 'Signout' : 'Create Account'}
-                </button>
-                
-                {!authToken && <button className="primary-button" onClick={handleClickLogin}>
-                    Login
-                </button>}
+                    {!authToken && (
+                        <Button
+                            onClick={handleClickLogin}
+                            className={"text-base"}
+                        >
+                            Login
+                        </Button>
+                    )}
                 </div>
 
-
                 {showModal && (
-                    <AuthModal setShowModal={setShowModal} isSignUp={isSignUp}/>
+                    <AuthModal
+                        setShowModal={setShowModal}
+                        isSignUp={isSignUp}
+                    />
                 )}
             </div>
         </div>
-    )
-}
-export default Home
+    );
+};
+export default Home;
