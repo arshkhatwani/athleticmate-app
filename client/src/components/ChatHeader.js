@@ -12,7 +12,7 @@ const ChatHeader = ({ user }) => {
     };
 
     return (
-        <div className="flex justify-between items-center bg-gradient-to-br from-purple-600 to-blue-500 p-5">
+        <div className="flex justify-between items-center bg-gradient-to-br from-purple-600 to-blue-500 px-5 py-3">
             <div className="profile">
                 <div className="img-container ">
                     <img src={user.url} alt={"photo of " + user.first_name} />

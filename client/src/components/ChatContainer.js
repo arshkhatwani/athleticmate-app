@@ -10,7 +10,7 @@ const ChatContainer = ({ user }) => {
         <div className="chat-container">
             <ChatHeader user={user} />
 
-            <div>
+            <div className="mb-3">
                 <button
                     className={
                         "option border-b-4 " +
