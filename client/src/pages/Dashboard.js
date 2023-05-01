@@ -106,7 +106,7 @@ const Dashboard = () => {
                                         }}
                                         className="card relative overflow-hidden"
                                     >
-                                        <div className="absolute w-full bg-black/50 bottom-0 bg-red-600 p-2 px-3">
+                                        <div className="absolute w-full bg-black/50 bottom-0 p-2 px-3">
                                             <h3 className="text-3xl text-white text-left">
                                                 {genderedUser.first_name}
                                             </h3>
