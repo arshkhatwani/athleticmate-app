@@ -35,9 +35,15 @@ const ChatHeader = ({ user }) => {
             <div className="mb-3 flex flex-row items-center">
                 <Link
                     to="/news"
-                    className="text-white border px-3 py-2 rounded-lg"
+                    className="text-white border px-3 py-2 rounded-lg mr-2"
                 >
                     News
+                </Link>
+                <Link
+                    to="/fitness"
+                    className="text-white border px-3 py-2 rounded-lg mr-2"
+                >
+                    Fitness
                 </Link>
             </div>
         </div>

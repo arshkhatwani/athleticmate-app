@@ -1,21 +1,16 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import fitnessBlogs from "../constants/fitnessBlogs";
 
-const NEWS_API =
-    "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ab853340eec74e9e9ac57e65e5d097ee";
-
-function News() {
+function Fitness() {
     const [news, setNews] = useState([]);
 
     useEffect(() => {
-        axios.get(NEWS_API).then((res) => {
-            setNews(res.data.articles);
-        });
+        setNews(fitnessBlogs);
     }, []);
 
     return (
         <div className="pt-5">
-            <h1 className="text-4xl mb-6">News</h1>
+            <h1 className="text-4xl mb-6">Fitness</h1>
 
             <div className="w-4/5 mx-auto">
                 {news.map((item, index) => (
@@ -26,7 +21,7 @@ function News() {
                         class="my-2 flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow flex-row hover:bg-gray-100 "
                     >
                         <img
-                            class="object-cover w-full rounded-t-lg h-96 h-auto w-32  rounded-none  rounded-l-lg"
+                            class="object-cover w-full rounded-t-lg h-96 h-auto w-32 rounded-lg"
                             src={item.urlToImage}
                             alt=""
                         />
@@ -45,4 +40,4 @@ function News() {
     );
 }
 
-export default News;
+export default Fitness;
