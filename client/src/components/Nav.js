@@ -8,7 +8,7 @@ const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
         <nav>
             <div className="p-3 pl-5 text-4xl	">
                 <span className={minimal ? "text-black" : "text-white"}>
-                    AthleteMate
+                    AthleticMate
                 </span>
             </div>
         </nav>
